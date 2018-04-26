@@ -1,0 +1,22 @@
+def main():
+    mondat="Itt van néhány szó, amely palidrom: bab, mém, leszel, görög, sós. Van közöttük egy kakukktojás, de a feladat, hogy megtaláljuk a leghosszabbat."
+    mondat=mondat.lower()
+    mondat=mondat.split(" ")
+    print(mondat)
+    szo2=""
+    mondat2=[]
+    for szo in mondat:
+        for i in range(len(szo)-1,-1,-1):
+            szo2+=szo[i]
+        mondat2.append(szo2)
+        szo2=""
+    print(mondat2)
+    p="a"
+    print(len(p))
+    for i in range(len(mondat)):
+        if mondat[i]==mondat2[i] and len(p)<len(mondat[i]):
+            p=mondat[i]
+    print(p)
+
+
+main()
