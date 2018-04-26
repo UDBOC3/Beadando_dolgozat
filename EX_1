@@ -1,0 +1,14 @@
+def fibonacci():
+    """A nulladik eleme 0, az első eleme 1 a további elemeit, az előző kettő összegeként kapjuk."""
+    a=-1
+    b=1
+    c=0
+    for i in range(100):
+        c=(a+b)
+        a=b
+        b=c
+        print(c, end=",")
+
+def main():
+    fibonacci()
+main()
