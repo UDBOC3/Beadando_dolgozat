@@ -1,0 +1,23 @@
+def kozoselem(A,B):
+    if len(A)>len(B):
+        n=len(B)
+    else:
+        n=len(B)
+    k=open("kozos.txt","w")
+    for i in range(n):
+        if A[i]==B[i]:
+            k.write(str(A[i]))
+    k.close()
+
+    f=open("kozos.txt","r")
+    for sor in f:
+        for i in range(len(sor)):
+            print(sor[i]+", ", end="")
+
+    f.close()
+
+def main():
+    A=["a","a","a","c","c","d","d"]
+    B=["s","s","a","c","c","d","w"]
+    kozoselem(A,B)
+main()
