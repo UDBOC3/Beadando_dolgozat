@@ -1,7 +1,17 @@
+def szokoz(m):
+    ujm=""
+    for i in range(len(m)):
+        if m[i]==" ":
+            continue
+        ujm+=m[i]
+    return ujm
+
+
 def main():
-    mondat="Itt van néhány szó, amely palidrom: bab még leszel görög sós. Van közöttük egy kakukktojás, de a feladat, hogy megtaláljuk a leghosszabbat."
+    mondat="Palidrom mondatok; Indul a görög aludni; Görög sós bab; A kirakó karika; Valami ima; Van közöttük egy kakukktojás."
+    mondat=szokoz(mondat)
     mondat=mondat.lower()
-    mondat=mondat.split(" ")
+    mondat=mondat.split(";")
     szo2=""
     mondat2=[]
     for szo in mondat:
@@ -9,11 +19,11 @@ def main():
             szo2+=szo[i]
         mondat2.append(szo2)
         szo2=""
+    print(mondat2)
     p=mondat[0]
     for i in range(len(mondat)):
-        if mondat[i]==mondat2[i] and len(p)<len(mondat[i]):
-            p=mondat[i]
-    print("A felsrorolt szavak közül a leghosszabb palidrom: ",p)
-
+        if mondat[i]==mondat2[i] and len(mondat[i])>len(p):
+            p=(mondat[i]+" ")
+    print("A felsrorolt szavak közül, a leghosszabb palidrom: ",p)
 
 main()
