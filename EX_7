@@ -8,6 +8,8 @@ def szokoz(m):
 
 
 def main():
+    emondat="Palidrom mondatok; Indul a görög aludni; Görög sós bab; A kirakó karika; Valami ima; Van közöttük egy kakukktojás."
+    emondat=emondat.split(";")
     mondat="Palidrom mondatok; Indul a görög aludni; Görög sós bab; A kirakó karika; Valami ima; Van közöttük egy kakukktojás."
     mondat=szokoz(mondat)
     mondat=mondat.lower()
@@ -23,7 +25,7 @@ def main():
     p=mondat[0]
     for i in range(len(mondat)):
         if mondat[i]==mondat2[i] and len(mondat[i])>len(p):
-            p=(mondat[i]+" ")
+            p=(emondat[i]+" .")
     print("A felsrorolt szavak közül, a leghosszabb palidrom: ",p)
 
 main()
