@@ -21,11 +21,10 @@ def main():
             szo2+=szo[i]
         mondat2.append(szo2)
         szo2=""
-    print(mondat2)
     p=mondat[0]
     for i in range(len(mondat)):
         if mondat[i]==mondat2[i] and len(mondat[i])>len(p):
-            p=(emondat[i]+" .")
+            p=(emondat[i]+".")
     print("A felsrorolt szavak közül, a leghosszabb palidrom: ",p)
 
 main()
