@@ -1,4 +1,5 @@
 def szokoz(m):
+    """A szóközök eltávolítása a mondatokból."""
     ujm=""
     for i in range(len(m)):
         if m[i]==" ":
