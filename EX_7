@@ -17,15 +17,18 @@ def main():
     mondat=mondat.split(";")
     szo2=""
     mondat2=[]
+    
     for szo in mondat:
         for i in range(len(szo)-1,-1,-1):
             szo2+=szo[i]
         mondat2.append(szo2)
+        
         szo2=""
     p=mondat[0]
     for i in range(len(mondat)):
         if mondat[i]==mondat2[i] and len(mondat[i])>len(p):
             p=(emondat[i]+".")
+            
     print("A felsrorolt szavak közül, a leghosszabb palidrom: ",p)
 
 main()
