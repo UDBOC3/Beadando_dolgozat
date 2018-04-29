@@ -4,7 +4,8 @@ def random_chars(n=1, chars=string.ascii_uppercase):
     for i in range(n):
         yield random.choice(chars)
 
-def lrk(xlist, ylist):
+def lkr(xlist, ylist):
+    """A leghosszabb közös részhalmaz meghatározása"""
     if not xlist or not ylist:
         return []
     x, xs, y, ys, = xlist[0], xlist[1:], ylist[0], ylist[1:]
@@ -18,5 +19,5 @@ def main():
     s2 = [c for c in random_chars(n=15, chars='AGCT')]
     print(s1)
     print(s2)
-    print(lrk(s1,s2))
+    print(lkr(s1,s2))
 main()
