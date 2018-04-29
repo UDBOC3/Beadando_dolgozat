@@ -12,7 +12,7 @@ def lkr(xlist, ylist):
     if x==y:
         return [x] + lrk(xs,ys)
     else:
-        return max(lrk(xlist,ys), lrk(xs,ylist), key=len)
+        return max(lrk(xlist,ys), lrk(xs,ylist))
 
 def main():
     s1=[c for c in random_chars(n=15, chars='AGCT')]
