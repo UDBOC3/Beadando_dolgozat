@@ -30,5 +30,5 @@ def main():
             p=(emondat[i]+".")
             
     print("A felsrorolt szavak közül, a leghosszabb palidrom: ",p)
-
+ 
 main()
