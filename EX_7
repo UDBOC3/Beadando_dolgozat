@@ -6,8 +6,6 @@ def szokoz(m):
             continue
         ujm+=m[i]
     return ujm
-
-
 def main():
     emondat="Palidrom mondatok; Indul a görög aludni; Görög sós bab; A kirakó karika; Valami ima; Van közöttük egy kakukktojás."
     emondat=emondat.split(";")
