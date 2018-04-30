@@ -15,7 +15,6 @@ def main():
     mondat=mondat.split(";")
     szo2=""
     mondat2=[]
-    
     for szo in mondat:
         for i in range(len(szo)-1,-1,-1):
             szo2+=szo[i]
