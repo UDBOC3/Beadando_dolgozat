@@ -8,7 +8,6 @@ def fibonacci():
         a=b
         b=c
         print(c)
-
 def main():
     fibonacci()
 main()
