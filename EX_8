@@ -3,6 +3,7 @@ import string, random
 def random_chars(n=1, chars=string.ascii_uppercase):
     for i in range(n):
         yield random.choice(chars)
+ 
 def lkr(xlist, ylist):
     """A leghosszabb közös részhalmaz meghatározása"""
     if not xlist or not ylist:
