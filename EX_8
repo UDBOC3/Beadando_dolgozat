@@ -1,23 +1,28 @@
-import string, random
+import random
 
-def random_chars(n=1, chars=string.ascii_uppercase):
+
+def random_chars(n, chars):
     for i in range(n):
         yield random.choice(chars)
- 
+
+
 def lkr(xlist, ylist):
     """A leghosszabb közös részhalmaz meghatározása"""
     if not xlist or not ylist:
         return []
     x, xs, y, ys, = xlist[0], xlist[1:], ylist[0], ylist[1:]
-    if x==y:
-        return [x] + lrk(xs,ys)
+    if x == y:
+        return [x] + lkr(xs, ys)
     else:
-        return max(lrk(xlist,ys), lrk(xs,ylist))
-        
+        return max(lkr(xlist, ys), lkr(xs, ylist))
+
+
 def main():
-    s1=[c for c in random_chars(n=15, chars='AGCT')]
-    s2 = [c for c in random_chars(n=15, chars='AGCT')]
+    s1 = [c for c in random_chars(n=8, chars='AGCT')]
+    s2 = [c for c in random_chars(n=8, chars='AGCT')]
     print(s1)
     print(s2)
-    print(lkr(s1,s2))
+    print(lkr(s1, s2))
+
+
 main()
