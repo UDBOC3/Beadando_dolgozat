@@ -1,0 +1,11 @@
+def main():
+    a={5, 210, 48, 1}
+    for i in range(8):
+        for j in range(i-2):
+            print("*", end=" ")
+        print(" ")
+    for i in range(4):
+        for j in range(j):
+            print("*", end=" ")
+        print( )
+main()
