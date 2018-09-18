@@ -4,9 +4,9 @@ def fibonacci():
     b=1
     c=0
     for i in range(100):
-        c=(a+b)
-        a=b
-        b=c
+        c = (a+b)
+        a = b
+        b = c
         print(c)
 def main():
     fibonacci()
