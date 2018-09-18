@@ -13,3 +13,9 @@ def min(a):
         if a[i]<min:
             min=a[i]
     return min
+    
+    def main():
+    a=(1,4,2,10,44,5)
+    print("Maximum: ", max(a))
+    print("Minimum: ", min(a))
+main()
