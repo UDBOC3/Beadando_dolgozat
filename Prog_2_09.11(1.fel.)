@@ -5,3 +5,11 @@ def max(a):
         if a[i]>max:
             max=a[i]
     return max
+
+
+def min(a):
+    min=math.inf
+    for i in range(len(a)):
+        if a[i]<min:
+            min=a[i]
+    return min
