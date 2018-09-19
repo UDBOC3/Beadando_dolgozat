@@ -35,7 +35,19 @@ class Circle:
     def area(self):
         return self.radius.square()*self.pi
 
+class BigString:
 
-c1=Circle(5)
-print(c1)
-print(c1.area())
+    def __init__(self, p1):
+        self.str=p1
+
+    def getString(self):
+        self.str=input('Adjon meg egy sztringet: ')
+
+    def uppercase(self):
+        print (self.str.upper)
+
+
+
+s=BigString('valami')
+s.getString()
+s.uppercase()
