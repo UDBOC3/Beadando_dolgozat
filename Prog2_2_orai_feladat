@@ -36,6 +36,7 @@ class Circle:
     def __str__(self):
         return 'This circle has radius: {}'.format(self.radius)
 
-
 c1=Circle(5)
 print(c1)
+print(c1.area())
+print(c1.perimeter())
