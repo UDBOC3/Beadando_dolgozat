@@ -22,14 +22,20 @@ class IntigerNum:
             return 0
 
 
-n=IntigerNum(7)
-print(n.number)
-print(n.pow(10))
-print(n.square())
-print(n.double())
-n.number=-36
-print(n.abs())
 
 
+class Circle:
+    'osztály szintű adattag'
+    pi=3.14
+
+    def __init__(self, r):
+        self.radius=r
+        self.tmp='valami'
+        self.diameter=2*r
+
+    def __str__(self):
+        return 'This circle has radius: {}'.format(self.radius)
 
 
+c1=Circle(5)
+print(c1)
