@@ -21,22 +21,21 @@ class IntigerNum:
         else:
             return 0
 
-
-
-
 class Circle:
     'osztály szintű adattag'
     pi=3.14
 
     def __init__(self, r):
-        self.radius=r
-        self.tmp='valami'
-        self.diameter=2*r
+        self.radius=IntigerNum(r)
+        self.diameter=IntigerNum(2*r)
 
     def __str__(self):
-        return 'This circle has radius: {}'.format(self.radius)
+        return 'This circle has radius: {} and its area: {}'.format(self.radius.number, self.area())
+
+    def area(self):
+        return self.radius.square()*self.pi
+
 
 c1=Circle(5)
 print(c1)
 print(c1.area())
-print(c1.perimeter())
