@@ -1,0 +1,35 @@
+class IntigerNum:
+    'ide jön az osztály szintű adattag'
+
+    def __init__(self, p1):
+        self.number = p1
+
+    def pow(self, k):
+        return self.number**k
+
+    def square(self):
+        return self.number**2
+
+    def double(self):
+        return self.number*2
+
+    def abs(self):
+        if self.number>0:
+            return self.number
+        elif self.number<0:
+            return -self.number
+        else:
+            return 0
+
+
+n=IntigerNum(7)
+print(n.number)
+print(n.pow(10))
+print(n.square())
+print(n.double())
+n.number=-36
+print(n.abs())
+
+
+
+
