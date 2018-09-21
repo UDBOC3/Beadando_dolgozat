@@ -1,0 +1,13 @@
+class Szamitas:
+
+    def __init__(self,h, sz):
+        self.h=h
+        self.sz=sz
+
+    def terulet(self):
+        return self.h*self.sz
+
+def main():
+    t=Szamitas(10,15)
+    print(t)
+main()
