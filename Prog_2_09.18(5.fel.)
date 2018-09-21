@@ -1,7 +1,6 @@
 import numpy as np
 
 class SzumNull:
-    a=np.array=[-25, -10, -7, -3, 2, 4, 8, 10]
     b=np.array=[]
 
 
@@ -18,6 +17,7 @@ class SzumNull:
         return self.b
 
 def main():
-    t=SzumNull
+    a = np.array = [-25, -10, -7, -3, 2, 4, 8, 10]
+    t=SzumNull(a)
     print (t)
 main()
