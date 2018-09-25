@@ -3,10 +3,8 @@ import numpy as np
 class SzumNull:
     b=np.array=[]
 
-
     def __init__(self,a):
         self.a=a
-
 
     def osszeg(self):
         for i in range(len(self.a)):
