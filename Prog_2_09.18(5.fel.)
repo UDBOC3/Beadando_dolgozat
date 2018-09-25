@@ -13,8 +13,8 @@ class SzumNull:
                 for k in range(j+1):
                     if self.a[i]+self.a[j]+self.a[k]==0:
                         b.append(self.a[i])
-                        b.append(self.a[i])
-                        b.append(self.a[i])
+                        b.append(self.a[j])
+                        b.append(self.a[k])
         return b
 
 def main():
