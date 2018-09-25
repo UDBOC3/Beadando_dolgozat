@@ -2,7 +2,6 @@ import numpy as np
 
 class SzumNull:
 
-
     def __init__(self,a):
         self.a=a
 
