@@ -1,21 +1,22 @@
 import numpy as np
 
 class SzumNull:
-    b=np.array=[]
+
 
     def __init__(self,a):
         self.a=a
 
     def osszeg(self):
+        b = np.array = []
         for i in range(len(self.a)):
             for j in range(i+1):
                 for k in range(j+1):
                     if self.a[i]+self.a[j]+self.a[k]==0:
                         self.b.append(self.a[i],self.a[j], self.a[k])
-        return self.b
+        return b
 
 def main():
     a = np.array = [-25, -10, -7, -3, 2, 4, 8, 10]
-    t=SzumNull(a)
-    print (t)
+    x=SzumNull(a)
+    print(x.osszeg())
 main()
