@@ -58,7 +58,10 @@ class PredDefinedMinLimitBankAccount(BankAccount):
             self.balance-=amount
 
 class MyList(list):
+
+
     def clear(self):
-        for i in self:
+        tmp=self.copy()
+        for i in tmp:
             if i<0:
                 self.remove(i)
