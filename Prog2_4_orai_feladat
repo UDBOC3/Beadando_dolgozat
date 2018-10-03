@@ -1,1 +1,64 @@
+import numpy as np
+class Polygon:
 
+
+    def __init__(self, p1):
+        self.number_of_sides=p1
+        self.length_of_sides=[0 for i in range(0,p1)]
+
+    def dispSides(self):
+        for i in range(0, self.number_of_sides):
+            print("The lemgth of {}. sides: {}".format(i+1, self.length_of_sides[i]))
+
+    def inputSides(self):
+        for i in range(0, self.number_of_sides):
+            self.length_of_sides[i]=float(input('Give me the {}. side:'.format(i+1)))
+        print(self.length_of_sides)
+
+    def getPerimeter(self):
+        P=0
+        for i in self.length_of_sides:
+            P+=i
+        return P
+
+
+class Triangle(Polygon):
+    def __init__(self):
+        Polygon.__init__(self,3) #over-ride
+
+    def getArea(self):
+        s=self.getPerimeter()/2.0
+        A=s
+        for i in self.length_of_sides:
+            A*=(s-i)
+        return A**0.5
+
+class BankAccount:
+
+    def __init__(self):
+
+        self.balance=0
+
+    def deposit(self, amount):
+        self.balance+=amount
+
+    def withdraw(self, amount):
+        self.balance-=amount
+
+class PredDefinedMinLimitBankAccount(BankAccount):
+
+    def __init__(self, p1):
+        BankAccount.__init__(self)
+        self.minLimit=p1
+
+    def withdraw(self, amount):
+        if self.balance-amount<self.minLimit:
+            print('You cannot pay it.')
+        else:
+            self.balance-=amount
+
+class MyList(list):
+    def clear(self):
+        for i in self:
+            if i<0:
+                self.remove(i)
