@@ -44,12 +44,35 @@ class IntegerNum:
         else:
             return 0
             
+class Circle:
+    pi=3.14
+
+    def __init__(self,r ):
+        self.radius=IntegerNum(r)
+        self.name='Kor'
+        self.diameter=IntegerNum(2*r)
+
+    def __str__(self):
+        return "Ez a kor sugara: {} a terulete: {}".format(self.radius.number, self.getArea())
+
+    def getArea(self):
+        return self.radius.squareNum()*self.pi
+
+    def getPerimeter(self):
+        return 2*self.pi*self.radius.number            
+            
 def main():
     num=IntegerNum(7)
     print(num.pow(8))
     print(num.abs())
     print(num.doubleNum())
     print(num.squareNum())
+    
+    
+    kor=Circle(5)
+    print(kor.getArea())
+    print(kor.getPerimeter())
+    print(kor)
 
 main()
 
