@@ -59,8 +59,21 @@ class Circle:
         return self.radius.squareNum()*self.pi
 
     def getPerimeter(self):
-        return 2*self.pi*self.radius.number            
-            
+        return 2*self.pi*self.radius.number    
+        
+        
+class MyString:
+
+    def __init__(self):
+        self.str=""
+
+    def getString(self):
+        self.str=input("Adj meg egy szring sorozatot!: ")
+
+    def printString(self):
+        print(self.str.upper())
+        
+        
 def main():
     num=IntegerNum(7)
     print(num.pow(8))
@@ -73,6 +86,12 @@ def main():
     print(kor.getArea())
     print(kor.getPerimeter())
     print(kor)
+    
+    str=MyString()
+    str.getString()
+    str.printString()
+    
+    
 
 main()
 
