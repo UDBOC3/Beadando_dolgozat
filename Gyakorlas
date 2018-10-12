@@ -1,3 +1,4 @@
+"1.gyak."
 class Employee:
     empCount=0
 
@@ -19,3 +20,36 @@ def main():
     emp1.displayCount()
 main()
 ----------------------------------------------------------------------------------------------------------------------------------
+"2.gyak."
+
+class IntegerNum:
+
+    def __init__(self, p1):
+        self.number=p1
+
+    def doubleNum(self):
+        return self.number*2
+
+    def squareNum(self):
+        return self.number**2
+
+    def pow(self,k):
+        return self.number**k
+
+    def abs(self):
+        if self.number<0:
+            return self.number*-1
+        if self.number>0:
+            return self.number
+        else:
+            return 0
+            
+def main():
+    num=IntegerNum(7)
+    print(num.pow(8))
+    print(num.abs())
+    print(num.doubleNum())
+    print(num.squareNum())
+
+main()
+
