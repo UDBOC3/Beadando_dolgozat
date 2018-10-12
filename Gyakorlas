@@ -1,0 +1,21 @@
+class Employee:
+    empCount=0
+
+    def __init__(self, name, salary):
+        self.name=name
+        self.salary=salary
+        self.empCount+=1
+
+    def displayCount(self):
+        print(self.empCount)
+
+    def displayEmployee(self):
+        print("Nev: ",self.name," ", "Fizetes: ",self. salary)
+
+def main():
+    emp1=Employee('Gabor', 100000)
+    emp2=Employee('Zara', 3000)
+    emp3=Employee('Manni', 2000)
+    emp1.displayCount()
+main()
+----------------------------------------------------------------------------------------------------------------------------------
