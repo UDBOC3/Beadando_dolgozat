@@ -90,8 +90,80 @@ def main():
     str=MyString()
     str.getString()
     str.printString()
-    
-    
+main()
 
+---------------------------------------------------------------------------------------------------------------------------------
+3.gyak.:
+
+import math
+
+class Triangle:
+
+    def __init__(self, p1, p2, p3=0):
+        if p3==0:
+            self.a=p1
+            self.h=p2
+        else:
+            self.a=p1
+            self.b=p2
+            self.c=p3
+
+    def area(self):
+        if hasattr(self, 'c'):
+            s=(self.a+self.b+self.c)/2
+            area=(s*(s-self.a)*(s-self.b)*(s-self.c))**0.5
+            return area
+        else:
+            return (self.a*self.h)/2
+
+    def perimeter(self):
+        if hasattr(self, 'c'):
+            return self.a+self.b+self.c
+        else:
+            return('Csak 2 adat van megvadva.')
+
+    def __str__(self):
+        if hasattr(self, 'c'):
+            return 'A haromszog oldalai: {},{},{}'.format(self.a,self.b,self.c)
+        else:
+            return 'Magassag: {}, Alap: {}'.format(self.h, self.a)
+
+    def __add__(self, other):
+        if isinstance(other, Triangle):
+            return self.area()+other.area()
+        if isinstance(other, int) or isinstance(other, float):
+            return self.area()+other
+
+    def __radd__(self, other):
+        return self.__add__(other)
+
+    def __sub__(self, other):
+        if isinstance(other, Triangle):
+            return self.area()-other.area()
+
+        if isinstance(other, int) or isinstance(other, float):
+            return self.area()-other
+
+    def __eq__(self, other):
+        return self.area()==other.area()
+
+    def __ne__(self, other):
+        return self.area()!=other.area()
+
+    def __gt__(self, other):
+        return self.area()>other.area()
+
+    def __le__(self,other):
+        return self.area()<=other.area()
+
+def main():
+    t1=Triangle(3,4,5)
+    print(t1)
+    print(t1.area())
+    print(t1.perimeter())
+    t2=Triangle(4,6)
+    print(t2)
+    print(t2.area())
+    print("__add__: ", t1+t2, t1+3, t1+3.2)
 main()
 
