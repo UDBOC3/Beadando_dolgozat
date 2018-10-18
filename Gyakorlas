@@ -270,6 +270,20 @@ class BankAcoount:
 
     def __str__(self):
         return 'Szamla egyenleg: {}'.format(self.balance)
+        
+        
+    class  PreDeterminedMinAccount(BankAcoount):
+
+    def __init__(self, p1):
+        BankAcoount.__init__(self)
+        self.minLimit=-p1
+
+    def withdraw(self, amount):
+        if self.balance-amount>=self.minLimit:
+            self.balance-=amount
+            print('Sikereses tranzakcio')
+        else:
+            print('Tul lepte a limitet')
     
 
 
