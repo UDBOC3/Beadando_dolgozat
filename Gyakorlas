@@ -220,5 +220,65 @@ def main():
     print(n.argz())
 main()
 
+--------------------------------------------------------------------------------------------------------------------------------
+4.gyak.:
+
+class Polygon(object):
+
+    def __init__(self, p1=0):
+        self.n=p1
+        self.sides=[0.0 for x in range(p1)]
+
+    def inputSides(self):
+        for i in range(len(self.sides)):
+            self.sides[i]=int(input("Add meg a(z) {}. oldal hosszat".format(i+1)))
+
+    def printSides(self):
+            for i in range(len(self.sides)):
+                print('A(z) {} oldal merete: {}'.format(i+1, self.sides[i]))
+
+class Triangle(Polygon):
+
+    def __init__(self):
+        Polygon.__init__(self, 3)
+
+    def getPerimeter(self):
+        p=0
+        for i in range(self.n):
+            p+=self.sides[i]
+        return p
+
+    def getArea(self):
+        a=self.sides[0]
+        b=self.sides[1]
+        c=self.sides[2]
+        s=(a+b+c)/2
+        area=(s*(s-a)*(s-b)*(s-c))**0.5
+        return area
+
+
+class BankAccount:
+    
+
+
+
+
+
+
+def main():
+    #p=Polygon(4)
+    #p.inputSides()
+    #print(p.printSides())
+
+    #t=Triangle()
+    #t.inputSides()
+    #t.printSides()
+    #print(t.getPerimeter())
+    #print(t.getArea())
+
+
+
+main()
+
 
 
