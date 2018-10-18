@@ -301,6 +301,11 @@ def main():
     #t.printSides()
     #print(t.getPerimeter())
     #print(t.getArea())
+    
+    #t=PreDeterminedMinAccount(100)
+    #t.deposit(10000)
+    #for i in range(5):
+        #t.withdraw(2021)
 
 
 
