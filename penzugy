@@ -51,11 +51,11 @@ class D:
         self.dollar=dollar
         self.ev=ev
         self.hozam=r
-        self.nevezo = Fuggvenyek((self.hozam(self.hozam+1)))
+        self.nevezo = Fuggvenyek((self.hozam*(self.hozam+1)))
 
 
     def getPresentValue(self):
-        return self.dollar*((1/self.hozam)-(1/(self.nevezo.pow(self.ev))))
+        return round(self.dollar*((1/self.hozam)-(1/(self.nevezo.pow(self.ev)))),2)
 
     def __str__(self):
         return ("D) Evi {}$ {} even keresztul, aminek a jelenterteke(PV)={}$".format(self.dollar, self.ev, self.getPresentValue()))
@@ -68,10 +68,7 @@ def main():
     print(b)
     c=C(11400, 0.12)
     print(c)
-    d=D(19000, 10, 12)
+    d=D(19000, 10, 1.2)
     print(d)
-
-
-
 
 main()
