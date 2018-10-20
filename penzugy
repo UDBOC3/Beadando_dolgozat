@@ -59,6 +59,39 @@ class D:
     def __str__(self):
         return ("D) Evi {}$ {} even keresztul, aminek a jelenterteke(PV)={}$\n".format(self.dollar, self.ev, self.getPresentValue()))
 
+class theBest(A,B,C,D):
+
+    def __init__(self):
+        A.__init__(self,100000)
+        self.pvA = A.getPresentValue(self)
+        self.nameA = 'A)'
+        
+        B.__init__(self, 180000, 5, 0.12)
+        self.pvB= B.getPresentValue(self)
+        self.nameB='B)'
+
+        C.__init__(self, 11400, 0.12)
+        self.pvC = C.getPresentValue(self)
+        self.nameC='C)'
+        
+        D.__init__(self, 19000, 10, 0.12)
+        self.pvD = D.getPresentValue(self)
+        self.nameD="D)"
+
+
+    def getAllPV(self):
+        a=[self.pvA, self.pvB, self.pvC, self.pvD]
+        names=[self.nameA, self.nameB, self.nameC, self.nameD]
+        max=[self.pvA]
+        mnames=[self.nameA]
+        for i in range(len(a)):
+            if a[i]>max[0]:
+                max[0]=a[i]
+                mnames[0]=names[i]
+
+        return ("A legmagasabb jelenerteke a {} befektetesnek van: {}".format(mnames[0], max[0]))
+
+
 
 
 
@@ -71,5 +104,8 @@ def main():
     print(c)
     d=D(19000, 10, 0.12)
     print(d)
+    
+    kt=theBest()
+    print(kt.getAllPV())
 
 main()
