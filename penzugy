@@ -103,12 +103,16 @@ class theBest(A,B,C,D):
         return ("A legmagasabb jelenerteke a {} befektetesnek van: {}$".format(mnames[0], max[0]))
     
     
-    class Statisztika(theBest):
+class Statisztika():
+
     def __init__(self):
-        theBest.__init__(self)
+        pass
+
 
     def avg(self):
-        return (self.pvA+self.pvB+self.pvC+self.pvD)/2
+        a = A(100000)
+        b = B(180000, 5, 0.12)
+        print(a + b)
 
 
 def main():
@@ -124,8 +128,5 @@ def main():
     kt=theBest()
     print(kt.getAllPV())
     
-    
-    st=Statisztika()
-    print(st.avg())
 
 main()
