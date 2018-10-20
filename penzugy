@@ -13,7 +13,8 @@ class A:
         self.dollar=dollar
 
     def getPresentValue(self):
-        return self.dollar
+        self.pvA=self.dollar
+        return self.pvA
 
     def __str__(self):
         return ("A) Azonnal kap {}$-t, aminek a jelenertek(PV)={}$\n".format(self.dollar, self.dollar))
@@ -26,12 +27,13 @@ class B:
         self.ev=ev
         self.nevezo=Fuggvenyek(r+1)
 
+
     def getPresentValue(self):
-        self.pv=round(self.dollar/(self.nevezo.pow(self.ev)),2)
-        return self.pv
+        self.pvB=round(self.dollar/(self.nevezo.pow(self.ev)),2)
+        return self.pvB
 
     def __str__(self):
-        return ("B) {} ev mulva 180.000$-t aminek a jelenerteke: {}$\n".format(self.ev, self.getPresentValue()))
+        return ("B) {} ev mulva 180000$-t aminek a jelenerteke: {}$\n".format(self.ev, self.pvB))
 
 class C:
 
@@ -40,10 +42,11 @@ class C:
         self.hozam=r
 
     def getPresentValue(self):
-        return self.dollar/self.hozam
+        self.pvC=self.dollar/self.hozam
+        return self.pvC
 
     def __str__(self):
-        return ("C) Evi {}$-os orokjaredek, aminek jelenerteke(PV)={}\n".format(self.dollar, self.getPresentValue()))
+        return ("C) Evi {}$-os orokjaredek, aminek jelenerteke(PV)={}$\n".format(self.dollar, self.pvC))
 
 class D:
 
@@ -54,56 +57,61 @@ class D:
 
 
     def getPresentValue(self):
-        return round(self.dollar*((1/self.hozam)-(1/(self.hozam*(self.hozam+1)**self.ev))))
+        self.pvD=round(self.dollar*((1/self.hozam)-(1/(self.hozam*(self.hozam+1)**self.ev))))
+        return self.pvD
 
     def __str__(self):
-        return ("D) Evi {}$ {} even keresztul, aminek a jelenterteke(PV)={}$\n".format(self.dollar, self.ev, self.getPresentValue()))
+        return ("D) Evi {}$ {} even keresztul, aminek a jelenterteke(PV)={}$\n".format(self.dollar, self.ev, self.pvD))
 
 class theBest(A,B,C,D):
 
     def __init__(self):
-        A.__init__(self,100000)
+        A.__init__(self, 100000)
         self.pvA = A.getPresentValue(self)
         self.nameA = 'A)'
-        
+        self.kiirA=A.__str__(self)
+
         B.__init__(self, 180000, 5, 0.12)
         self.pvB= B.getPresentValue(self)
         self.nameB='B)'
+        self.kiirB=B.__str__(self)
 
         C.__init__(self, 11400, 0.12)
         self.pvC = C.getPresentValue(self)
         self.nameC='C)'
-        
+        self.kiirC=C.__str__(self)
+
         D.__init__(self, 19000, 10, 0.12)
         self.pvD = D.getPresentValue(self)
         self.nameD="D)"
-
+        self.kiirD=D.__str__(self)
 
     def getAllPV(self):
-        a=[self.pvA, self.pvB, self.pvC, self.pvD]
+        a=[A.getPresentValue(self), self.pvB, self.pvC, self.pvD]
         names=[self.nameA, self.nameB, self.nameC, self.nameD]
         max=[self.pvA]
         mnames=[self.nameA]
+        print(self.kiirA)
+        print(self.kiirB)
+        print(self.kiirC)
+        print(self.kiirD)
         for i in range(len(a)):
             if a[i]>max[0]:
                 max[0]=a[i]
                 mnames[0]=names[i]
 
-        return ("A legmagasabb jelenerteke a {} befektetesnek van: {}".format(mnames[0], max[0]))
-
-
-
+        return ("A legmagasabb jelenerteke a {} befektetesnek van: {}$".format(mnames[0], max[0]))
 
 
 def main():
-    a=A(100000)
-    print(a)
-    b=B(180000, 5, 0.12)
-    print(b)
-    c=C(11400, 0.12)
-    print(c)
-    d=D(19000, 10, 0.12)
-    print(d)
+    #a=A(100000)
+    #print(a)
+    #b=B(180000, 5, 0.12)
+    #print(b)
+    #c=C(11400, 0.12)
+    #print(c)
+    #d=D(19000, 10, 0.12)
+    #print(d)
     
     kt=theBest()
     print(kt.getAllPV())
