@@ -1,3 +1,5 @@
+http://wiki.ubuntu.hu/index.php/Python_kezd%C5%91knek_kurzus_7._lecke
+
 class Fuggvenyek:
 
     def __init__(self,a):
