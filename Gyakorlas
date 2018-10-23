@@ -426,4 +426,97 @@ def main():
 
 main()
 
+--------------------------------------------------------------------------------------------------------------------------------
+#plusz
+class IntegerNum:
+    'class attribute goes here'
+
+    pi=3.14
+
+
+    def __init__(self,p1):
+        self.number = p1
+
+    def doubleNum(self):
+        return self.number*2
+
+    def squareNum(self):
+        return self.number**2
+
+    def pow(self,k):
+        return self.number**k
+
+    def abs(self):
+        if self.number > 0:
+            return self.number
+        elif self.number < 0:
+            return -self.number
+        else:
+            return 0
+
+class Circle(IntegerNum):
+
+    def __init__(self,r):
+        self.r=r
+        IntegerNum.__init__(self, r)
+
+    def __str__(self):
+        print(self.r)
+
+    def getArea(self):
+        return( IntegerNum.squareNum(self)*self.pi)
+
+    def getPerimeter(self):
+        return(IntegerNum.doubleNum(self)*self.pi)
+
+
+class Summs(Circle):
+
+    def __init__(self, r):
+        self.r=r
+        Circle.__init__(self, self.r)
+
+    def summs(self):
+        return Circle.getPerimeter(self)+Circle.getArea(self)
+
+    def cunj(self):
+        ls=[]
+        ls.append(Circle.getArea(self))
+        ls.append(-Circle.getPerimeter(self))
+        return ls
+
+    def sumcun(self):
+        return self.cunj()[1]+self.summs()
+
+
+class AllClass(IntegerNum, Circle, Summs):
+
+    def __init__(self,r):
+        self.r=r
+        IntegerNum.__init__(self, self.r)
+        Circle.__init__(self, self.r)
+        Summs.__init__(self, self.r)
+
+    def allin(self):
+        return IntegerNum.doubleNum(self)+Circle.getArea(self)+Summs.sumcun(self)
+
+
+
+def main():
+    x=Circle(8)
+    print(x.getArea())
+    print(x.getPerimeter())
+    c=Summs(8)
+    print(c.summs())
+    print(c.cunj())
+    print(c.sumcun())
+    all=AllClass(8)
+    print(all.allin())
+
+
+main()
+
+
+
+
 
